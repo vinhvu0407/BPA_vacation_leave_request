@@ -1,0 +1,19 @@
+
+
+spring.h2.console.enabled: true
+spring.mail:
+  host: smtp.gmail.com
+  port: 587
+  username:
+  password:
+  properties.mail.smtp:
+    auth: true
+    starttls.enable: true
+
+zeebe:
+  client:
+    cloud:
+      region: dsm-1
+      clusterId:
+      clientId:
+      clientSecret:

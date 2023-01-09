@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="b82f70e" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.1.0" camunda:diagramRelationId="9c459957-e1e3-4d0b-8d9a-a5eaf00770f9">
+  <bpmn:collaboration id="Collaboration_OnePool">
+    <bpmn:participant id="Participant_0h8732s" name="company" processRef="Process_1ou5552" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1ou5552" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="userTaskForm_0i6p2l5">{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Yes, there are vacation days left",
+          "value": "true"
+        },
+        {
+          "label": "No, there aren't vacation days left ",
+          "value": "false"
+        }
+      ],
+      "label": "Vacation days left?",
+      "type": "radio",
+      "id": "Field_1ij09h8",
+      "key": "vacation_availability_checked"
+    }
+  ],
+  "schemaVersion": 5,
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "b82f70e"
+  },
+  "type": "default",
+  "id": "Form_72f300da-c1c7-4961-bfa2-1f88fd59e317",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_1mmlvgr">{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Yes, I have checked my schedule ",
+          "value": "true"
+        },
+        {
+          "label": "No, I haven't checked my schedule yet ",
+          "value": "no"
+        }
+      ],
+      "label": "Check schedule ",
+      "type": "radio",
+      "id": "Field_16s2hzs",
+      "key": "ckeck_schedule"
+    }
+  ],
+  "schemaVersion": 5,
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "a442b24"
+  },
+  "type": "default",
+  "id": "Form_8e0dfa50-0441-48bd-9cc4-079890550002",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_0ucshb8">{
+  "components": [
+    {
+      "text": "# Vacation request form:\n\n",
+      "type": "text",
+      "id": "Field_0y7rm39",
+      "properties": {}
+    },
+    {
+      "label": "Enter your personal ID:",
+      "type": "textfield",
+      "id": "Field_16oz9l6",
+      "key": "enter_your_personal_id",
+      "defaultValue": "xxxxxx-12/2022"
+    },
+    {
+      "label": "Enter your first name:",
+      "type": "textfield",
+      "id": "Field_1pqjmhi",
+      "key": "enter_your_first_name:",
+      "disabled": false,
+      "validate": {
+        "required": false,
+        "minLength": 2,
+        "maxLength": 100
+      },
+      "defaultValue": "Max"
+    },
+    {
+      "label": "Enter your last name:",
+      "type": "textfield",
+      "id": "Field_1494xsm",
+      "key": "enter_your_last_name:",
+      "defaultValue": "Mustermann"
+    },
+    {
+      "label": "Start Date:",
+      "type": "textfield",
+      "id": "Field_1feyz7b",
+      "key": "start_date",
+      "validate": {},
+      "defaultValue": "00/00/0000",
+      "properties": {}
+    },
+    {
+      "label": "End date:",
+      "type": "textfield",
+      "id": "Field_0slhc5s",
+      "key": "end_date",
+      "defaultValue": "00/00/0000"
+    }
+  ],
+  "schemaVersion": 5,
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "b82f70e"
+  },
+  "type": "default",
+  "id": "vacation_request_form",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_3v2b73k">{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "yes",
+          "value": "true"
+        },
+        {
+          "label": "no",
+          "value": "false"
+        }
+      ],
+      "label": "Alternative date wanted?",
+      "type": "radio",
+      "id": "Field_0ivcwjy",
+      "key": "alternative_date_wanted"
+    }
+  ],
+  "schemaVersion": 5,
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "b82f70e"
+  },
+  "type": "default",
+  "id": "Form_bc47ee61-5015-481a-9e53-1f345e2dbe53",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_1kutiun">{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Yes",
+          "value": "true"
+        },
+        {
+          "label": "No",
+          "value": "false"
+        }
+      ],
+      "label": "Approve vacation?",
+      "type": "radio",
+      "id": "Field_0z51fm6",
+      "key": "approve_vacation"
+    }
+  ],
+  "schemaVersion": 5,
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "fbb25e4"
+  },
+  "type": "default",
+  "id": "Form_6797ce27-7ff4-4c17-8348-b109d8b59c0e",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="userTaskForm_0qqbtjp">{   "schemaVersion": 2,   "components": [     {       "text": "# Enter Email Details",       "type": "text",       "id": "Field_0azvslw"     },     {       "label": "Sender Email",       "type": "textfield",       "id": "Field_1s3ggr3",       "key": "sender",       "validate": {         "required": true       }     },     {       "label": "Email Receiver",       "type": "textfield",       "id": "Field_0n6b5p2",       "key": "receiver",       "validate": {         "required": true       }     },     {       "label": "Subject",       "type": "textfield",       "id": "Field_05jh9gm",       "key": "subject",       "validate": {         "required": true       }     },     {       "label": "Email Body",       "type": "textfield",       "id": "Field_02fxlcu",       "key": "body"     },     {       "label": "System Message",       "type": "textfield",       "id": "Field_1bfhr21",       "key": "message",       "description": "If there is a message from the system it'll appear here. "     }   ],   "type": "default",   "id": "EmailDetailsForm" }</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:laneSet id="LaneSet_0nvq0ia">
+      <bpmn:lane id="Lane_11x8xne" name="Manager">
+        <bpmn:flowNodeRef>Gateway_05u9dpo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_C4</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1l4uv8h" name="HR">
+        <bpmn:flowNodeRef>Event_1ci13eu</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_C5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0o2yqq5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1shnh5s</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_0t1wg78" name="Employee">
+        <bpmn:flowNodeRef>Event_02yp72e</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0g8ke2c</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_C1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_C2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0z3g7a8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_C3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0ni810l</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0kff933</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0lbr121</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0okb3xv</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Event_02yp72e" name="Vacation wanted">
+      <bpmn:outgoing>Flow_0mr8qpz</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_0g8ke2c" name="Vacation days available?">
+      <bpmn:extensionElements>
+        <zeebe:properties>
+          <zeebe:property name="daysAvailable" value="true" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0jzxwni</bpmn:incoming>
+      <bpmn:outgoing>Flow_0vnfqi7</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1cj1ldo</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_C1" name="Check vacation day availability">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_0i6p2l5" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0mr8qpz</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jzxwni</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_C2" name="Check schedule">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_1mmlvgr" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0qlyhap</bpmn:incoming>
+      <bpmn:outgoing>Flow_16pj804</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0z3g7a8">
+      <bpmn:incoming>Flow_1cj1ldo</bpmn:incoming>
+      <bpmn:incoming>Flow_079yfot</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qlyhap</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_C3" name="Fill out vacation request form">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_0ucshb8" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_16pj804</bpmn:incoming>
+      <bpmn:outgoing>Flow_02dwy18</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_0ni810l" name="Alternative date wanted?">
+      <bpmn:extensionElements>
+        <zeebe:properties>
+          <zeebe:property name="alternativeWanted" value="true" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0wbriu7</bpmn:incoming>
+      <bpmn:outgoing>Flow_079yfot</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1409qjp</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:exclusiveGateway id="Gateway_05u9dpo" name="Request approved?">
+      <bpmn:extensionElements>
+        <zeebe:properties>
+          <zeebe:property name="requestApproved" value="true" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_06n5y3g</bpmn:incoming>
+      <bpmn:outgoing>Flow_1brwenf</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1i8ni1l</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_C4" name="Validate request">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_1kutiun" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_02dwy18</bpmn:incoming>
+      <bpmn:outgoing>Flow_06n5y3g</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_0kff933" name="Check validation result">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_3v2b73k" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1brwenf</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wbriu7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="Event_0lbr121" name="Vacation&#10;rejected">
+      <bpmn:incoming>Flow_1409qjp</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="Event_0okb3xv" name="Vacation request ended">
+      <bpmn:incoming>Flow_0vnfqi7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="Event_1ci13eu" name="Vacation permitted">
+      <bpmn:incoming>Flow_022ci88</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0mr8qpz" sourceRef="Event_02yp72e" targetRef="Activity_C1" />
+    <bpmn:sequenceFlow id="Flow_0jzxwni" sourceRef="Activity_C1" targetRef="Gateway_0g8ke2c" />
+    <bpmn:sequenceFlow id="Flow_0vnfqi7" name="no" sourceRef="Gateway_0g8ke2c" targetRef="Event_0okb3xv">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=vacation_availability_checked="false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1cj1ldo" name="yes" sourceRef="Gateway_0g8ke2c" targetRef="Gateway_0z3g7a8">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=vacation_availability_checked="true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0qlyhap" sourceRef="Gateway_0z3g7a8" targetRef="Activity_C2" />
+    <bpmn:sequenceFlow id="Flow_16pj804" sourceRef="Activity_C2" targetRef="Activity_C3" />
+    <bpmn:sequenceFlow id="Flow_079yfot" name="yes" sourceRef="Gateway_0ni810l" targetRef="Gateway_0z3g7a8">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=alternative_date_wanted="true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_02dwy18" sourceRef="Activity_C3" targetRef="Activity_C4" />
+    <bpmn:sequenceFlow id="Flow_0wbriu7" sourceRef="Activity_0kff933" targetRef="Gateway_0ni810l" />
+    <bpmn:sequenceFlow id="Flow_1409qjp" name="no" sourceRef="Gateway_0ni810l" targetRef="Event_0lbr121">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=alternative_date_wanted="false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_06n5y3g" sourceRef="Activity_C4" targetRef="Gateway_05u9dpo" />
+    <bpmn:sequenceFlow id="Flow_1brwenf" name="no" sourceRef="Gateway_05u9dpo" targetRef="Activity_0kff933">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=approve_vacation="false"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1i8ni1l" name="yes" sourceRef="Gateway_05u9dpo" targetRef="Activity_C5">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=approve_vacation="true"</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0e8dwyl" sourceRef="Activity_C5" targetRef="Activity_0o2yqq5" />
+    <bpmn:userTask id="Activity_C5" name="Enter Email Details">
+      <bpmn:extensionElements>
+        <zeebe:taskHeaders />
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_0qqbtjp" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1i8ni1l</bpmn:incoming>
+      <bpmn:incoming>Flow_118hap2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0e8dwyl</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_022ci88" sourceRef="Activity_0o2yqq5" targetRef="Event_1ci13eu" />
+    <bpmn:serviceTask id="Activity_0o2yqq5" name="Send Email">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="SendEmail" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0e8dwyl</bpmn:incoming>
+      <bpmn:outgoing>Flow_022ci88</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:boundaryEvent id="Event_1shnh5s" name="Invalid Email address" attachedToRef="Activity_0o2yqq5">
+      <bpmn:outgoing>Flow_118hap2</bpmn:outgoing>
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_1bb81al" errorRef="Error_1t17duh" />
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_118hap2" sourceRef="Event_1shnh5s" targetRef="Activity_C5" />
+  </bpmn:process>
+  <bpmn:error id="Error_1t17duh" name="INVALID_EMAIL" errorCode="INVALID_EMAIL" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_OnePool">
+      <bpmndi:BPMNShape id="Participant_0h8732s_di" bpmnElement="Participant_0h8732s" isHorizontal="true">
+        <dc:Bounds x="130" y="80" width="1270" height="800" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0t1wg78_di" bpmnElement="Lane_0t1wg78" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1240" height="390" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1l4uv8h_di" bpmnElement="Lane_1l4uv8h" isHorizontal="true">
+        <dc:Bounds x="160" y="650" width="1240" height="230" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_11x8xne_di" bpmnElement="Lane_11x8xne" isHorizontal="true">
+        <dc:Bounds x="160" y="470" width="1240" height="180" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_02yp72e_di" bpmnElement="Event_02yp72e">
+        <dc:Bounds x="232" y="212" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="211" y="255" width="81" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0g8ke2c_di" bpmnElement="Gateway_0g8ke2c" isMarkerVisible="true">
+        <dc:Bounds x="475" y="205" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="467" y="262" width="69" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0zakaav_di" bpmnElement="Activity_C1">
+        <dc:Bounds x="320" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_10irdko_di" bpmnElement="Activity_C2">
+        <dc:Bounds x="660" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0z3g7a8_di" bpmnElement="Gateway_0z3g7a8" isMarkerVisible="true">
+        <dc:Bounds x="565" y="205" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_045a9zd_di" bpmnElement="Activity_C3">
+        <dc:Bounds x="810" y="190" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0ni810l_di" bpmnElement="Gateway_0ni810l" isMarkerVisible="true">
+        <dc:Bounds x="965" y="285" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="952" y="255" width="77" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_05u9dpo_di" bpmnElement="Gateway_05u9dpo" isMarkerVisible="true">
+        <dc:Bounds x="965" y="535" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1026" y="546" width="52" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1tjfbyr_di" bpmnElement="Activity_C4">
+        <dc:Bounds x="810" y="520" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1jpv13w_di" bpmnElement="Activity_0kff933">
+        <dc:Bounds x="940" y="360" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0lbr121_di" bpmnElement="Event_0lbr121">
+        <dc:Bounds x="1292" y="292" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1290" y="335" width="42" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0okb3xv_di" bpmnElement="Event_0okb3xv">
+        <dc:Bounds x="1292" y="122" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1271" y="166" width="82" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ci13eu_di" bpmnElement="Event_1ci13eu">
+        <dc:Bounds x="1292" y="722" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1289" y="765" width="46" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0krajy1_di" bpmnElement="Activity_C5">
+        <dc:Bounds x="940" y="700" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ymwfha_di" bpmnElement="Activity_0o2yqq5">
+        <dc:Bounds x="1110" y="700" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ic4lc9_di" bpmnElement="Event_1shnh5s">
+        <dc:Bounds x="1162" y="762" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1188" y="816" width="63" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0mr8qpz_di" bpmnElement="Flow_0mr8qpz">
+        <di:waypoint x="268" y="230" />
+        <di:waypoint x="320" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0jzxwni_di" bpmnElement="Flow_0jzxwni">
+        <di:waypoint x="420" y="230" />
+        <di:waypoint x="475" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0vnfqi7_di" bpmnElement="Flow_0vnfqi7">
+        <di:waypoint x="500" y="205" />
+        <di:waypoint x="500" y="140" />
+        <di:waypoint x="1292" y="140" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="509" y="185" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1cj1ldo_di" bpmnElement="Flow_1cj1ldo">
+        <di:waypoint x="525" y="230" />
+        <di:waypoint x="565" y="230" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="525" y="212" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0qlyhap_di" bpmnElement="Flow_0qlyhap">
+        <di:waypoint x="615" y="230" />
+        <di:waypoint x="660" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16pj804_di" bpmnElement="Flow_16pj804">
+        <di:waypoint x="760" y="230" />
+        <di:waypoint x="810" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_079yfot_di" bpmnElement="Flow_079yfot">
+        <di:waypoint x="965" y="310" />
+        <di:waypoint x="590" y="310" />
+        <di:waypoint x="590" y="255" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="941" y="292" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_02dwy18_di" bpmnElement="Flow_02dwy18">
+        <di:waypoint x="860" y="270" />
+        <di:waypoint x="860" y="520" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wbriu7_di" bpmnElement="Flow_0wbriu7">
+        <di:waypoint x="990" y="360" />
+        <di:waypoint x="990" y="335" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1409qjp_di" bpmnElement="Flow_1409qjp">
+        <di:waypoint x="1015" y="310" />
+        <di:waypoint x="1292" y="310" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1061" y="292" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06n5y3g_di" bpmnElement="Flow_06n5y3g">
+        <di:waypoint x="910" y="560" />
+        <di:waypoint x="965" y="560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1brwenf_di" bpmnElement="Flow_1brwenf">
+        <di:waypoint x="990" y="535" />
+        <di:waypoint x="990" y="440" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="999" y="508" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1i8ni1l_di" bpmnElement="Flow_1i8ni1l">
+        <di:waypoint x="990" y="585" />
+        <di:waypoint x="990" y="700" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="996" y="593" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0e8dwyl_di" bpmnElement="Flow_0e8dwyl">
+        <di:waypoint x="1040" y="740" />
+        <di:waypoint x="1110" y="740" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_022ci88_di" bpmnElement="Flow_022ci88">
+        <di:waypoint x="1210" y="740" />
+        <di:waypoint x="1292" y="740" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_118hap2_di" bpmnElement="Flow_118hap2">
+        <di:waypoint x="1180" y="798" />
+        <di:waypoint x="1180" y="818" />
+        <di:waypoint x="990" y="818" />
+        <di:waypoint x="990" y="780" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,19 @@
+
+
+spring.h2.console.enabled: true
+spring.mail:
+  host: smtp.gmail.com
+  port: 587
+  username: vinhvu0407@gmail.com
+  password: cetquipirbjfzshb
+  properties.mail.smtp:
+    auth: true
+    starttls.enable: true
+
+zeebe:
+  client:
+    cloud:
+      region: dsm-1
+      clusterId: 298732c6-e7b9-4a14-8b37-3f81e95af56c
+      clientId: 3411BePrIhfxKrAROaX-47JyRGoRwhBW
+      clientSecret: Dbssy264YkusUz7XpuLOk28JLlGsh7g6fxwq2UR.Z0TGi4KXsUHl9AeYmgt44d74
